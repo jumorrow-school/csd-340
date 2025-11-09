@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- HTML File for Justin Morrow's CSD-340 Module 10.3 Assignment - 11/08/25
+	Resource for this weeks assignment:
+	Example_10 files provided by Professor Bhandari
+	https://www.w3schools.com/jsref/met_win_open.asp	
+	https://validator.w3.org/#validate_by_input: Document checking completed. No errors or warnings to show 11/8/25
+-->
+
+<head>
+<!-- Meta Header Tags Copied over from previous assignment -->
+	<meta charset="UTF-8">
+	<meta name="description" content="Assignment 10.3: JavaScript - Part 2">
+	<meta name="robots" content="nofollow">
+	<meta name="author" content="Justin Morrow">
+ 
+<!-- Link for Google Fonts Copied over from previous assignment -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+ 
+
+  
+<!-- My Page Title Seen on Browser Tab-->  
+	<title>CSD 340 Web Development with HTML and CSS</title>
+
+<!-- I don't see where this script is used, but I started with a clone of Example_10.html and added the items above like other examples and used JS window.open below -->
+    <script>
+      function displayImage(imageFile){
+        var largerImage = document.getElementById("mainImage");
+        var newNode = document.createElement("img");
+        newNode.id = "mainImage";
+        newNode.src = imageFile;
+        newNode.alt = "Large Image";
+        newNode.className = "mainImage";
+        newNode.style.width = "300px";
+        newNode.style.height = "200px";
+        largerImage.parentNode.replaceChild(newNode, largerImage);
+        
+      }
+    </script>
+
+
+  </head>
+
+  <body>
+    <br>
+    <div>
+      <h1>Assignment 10.3: JavaScript - Part 2</h1>
+	  <a href=#
+         onmouseover="charliebrown.src='CharlieBrown-Christmas.jpg';"
+         onmouseout= "charliebrown.src='CharlieBrown-Thanksgiving.jpg';"
+		 onclick="window.open('https://www.youtube.com/playlist?list=PLLhOnau-tupRfKdVNdRdbG66hCew1Y7nD','_blank');"
+      >
+        <!-- Changed border to id and removed border = 0 name = and added alt= since validator.w3.org advised to fix these issues-->
+		<img id="charliebrown" src="CharlieBrown-Thanksgiving.jpg" alt="Charlie Brown Thanksgiving">
+      </a>
+    </div>
+    <br>
+    <div
+         onmouseover="this.style.color='red';"
+         onmouseout= "this.style.color='green';">
+
+      Run your mouse over the image to see a Charlie Brown Christmas image
+	  <br>
+	  Click on the image to visit YouTube where you can watch Charlie Brown Shows
+	  <br>
+	  <br>
+
+    </div>
+    <div>
+      <a href=#
+         onmouseover="football.src='Cardinals-logo.jpg';"
+         onmouseout= "football.src='Seahawks-logo.jpg';"
+		 onclick="window.open('https://www.seahawks.com/','_blank');"
+      >
+        <!-- Changed border to id and removed border = 0 name = and added alt= since validator.w3.org advised to fix these issues-->
+		<img id="football" src="Seahawks-logo.jpg" alt="Seattle Seahawks Logo">
+      </a>
+    </div>
+    <br>
+    <div
+         onmouseover="this.style.color='green';"
+         onmouseout= "this.style.color='blue';">
+      Run your mouse over the image to change to see the team the Seahawks are playing on 11/09/25
+      <br>
+      Click on the image to visit the Seahawks Website
+    </div>
+  </body>
+</html>
