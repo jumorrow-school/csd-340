@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- HTML File for Justin Morrow's CSD-340 Module 11.2 Assignment - 11/13/25
+	References:
+	1. JavaScript String Methods https://www.w3schools.com/js/js_string_methods.asp
+	2. HTML Input Types: https://www.w3schools.com/html/html_form_input_types.asp 
+	3. JavaScript Array push: https://www.w3schools.com/jsref/jsref_push.asp
+	4. JavaScript Array pop: https://www.w3schools.com/jsref/jsref_pop.asp
+	5. JavaScript Array Methods: https://www.w3schools.com/js/js_array_methods.asp
+	6. HTML DOM Element innerHTML: https://www.w3schools.com/jsref/prop_html_innerhtml.asp
+	7. HTML DOM Button Object: https://www.geeksforgeeks.org/html/html-dom-button-object/
+	8. JavaScript Array length: https://www.geeksforgeeks.org/javascript/javascript-array-length-property/
+	9. How to use the alert method in JavaScript: https://www.geeksforgeeks.org/javascript/how-to-use-the-alert-method-in-javascript/
+-->
+
+<head>
+<!-- Meta Header Tags Copied over from previous assignment -->
+	<meta charset="UTF-8">
+	<meta name="description" content="Assignment 10.3: JavaScript - Part 2">
+	<meta name="robots" content="nofollow">
+	<meta name="author" content="Justin Morrow">
+ 
+<!-- Link for Google Fonts Copied over from previous assignment -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+ 
+	<link rel="stylesheet" href="style.css">
+  
+<!-- Make sure HTML page title says “CSD 340 Web Development with HTML and CSS” -->  
+	<title>CSD 340 Web Development with HTML and CSS</title>
+
+</head>
+
+<body>
+<!-- Rename the h1 text value to “Assignment 11.2: JavaScript - Part 3” -->
+    <h1>Assignment 11.2: JavaScript - Part 3</h1>
+
+<!-- Instructions to the user for how to use the program -->
+    <p>This is an interactive To Do List. Type in your first item in the text box, then click button.</p>
+	<p>Click the Display button to see the current items in the list after adding or deleting items.</p>
+	<p>Click on the Delete Last Entry button if you would like to remove the last entry in the list.</p>
+
+<!-- Create a text box and three buttons. One button should be labeled "Add", one button should be labled "Delete Last Entry", last button should be labeled "Display".  -->
+    <input type="text" id="listTasks">
+	<br>
+	<br>
+    <div>
+        <button onclick="addTask()">Add</button>
+        <button onclick="deleteTask()">Delete Last Entry</button>
+        <button onclick="displayTasks()">Display</button>
+    </div>
+
+<!-- New line and dividing horizontal line between the buttons and the displayed To Do List items-->
+    <br>
+	<hr>
+    <div id="displayList"></div>
+
+
+<!-- Create a javascript section. Add a function for adding an element to an array, a function for deleting an element in an array, and a function for displaying the contents of the array. -->
+    <script>
+        var toDoList = [];
+
+<!-- Instructions: When the Add button is clicked, the contents of the text box should be added to an array using a function. The user should also see an alert pop up that lets them see what was added where. -->
+        <!-- Reference Mod 11 Example: Elements, Online References: HTML Input Types, JavaScript Array push and How to use the alert method in JavaScript --> 
+		function addTask() {
+            var task = document.getElementById("listTasks").value;
+            if (task === "") {
+				alert("Type a To Do Task name in the text box and then press the Add button. (Ex: Laundry)");
+            } 
+				else {
+					toDoList.push(task);
+					alert("You added '" + task + "' as task # " + toDoList.length + " in your To Do List.");
+					document.getElementById("listTasks").value = "";
+				}
+        }
+
+<!-- Instructions: When the Delete Last Entry button is clicked, the last element of the array should be deleted using a function. You can manipulate the array.length or use pop. -->
+		<!-- Reference Mod 11 Example: Elements, Online References: JavaScript Array pop and How to use the alert method in JavaScript -->
+        function deleteTask() {
+            if (toDoList.length === 0) {
+                alert("Your To Do List is empty. Please add a task.");
+            }
+				else {
+					var deletedTask = toDoList.pop();
+					alert("You deleted the last task '" + deletedTask + "' from your To Do List");
+				}
+        }
+
+<!-- Instructions: When the Display button is clicked, the contents of the array should be displayed, using a function, in order starting with 1. -->
+		<!-- Reference Mod 11 Example: Arrays and Iteration, Online Reference: HTML DOM Element innerHTML. -->
+        function displayTasks() {
+            var displayList = document.getElementById("displayList");
+
+            if (toDoList.length === 0) {
+                displayList.innerHTML = "<p>Your list is empty. Congrats on completing all the items on your To Do List!</p>";
+                return;
+            }
+			
+            var bulletedList = "<ul>";
+			
+            for (var i = 0; i < toDoList.length; i++) {
+                bulletedList += "<li>Task # " + (i + 1) + " = " + toDoList[i] + "</li>";
+            }
+			
+            bulletedList += "</ul>";
+            displayList.innerHTML = bulletedList;
+        }
+    </script>
+</body>
+</html>
