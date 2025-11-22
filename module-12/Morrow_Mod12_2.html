@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--References:
+	1) JavaScript Arrays: https://www.w3schools.com/js/js_arrays.asp
+    2) JavaScript For Loops: https://www.w3schools.com/js/js_loop_for.asp
+    3) JavaScript DOM innerHTML: https://www.w3schools.com/jsref/prop_html_innerhtml.asp
+    4) JavaScript document.getElementById(): https://www.w3schools.com/jsref/met_document_getelementbyid.asp
+	5) HTML Reversing an Ordered List: https://www.w3schools.com/tags/att_ol_reversed.asp
+	6) JavaScript Reverse an Array: https://www.geeksforgeeks.org/javascript/reverse-an-array-in-javascript/
+	7) JavaScript comments: https://www.w3schools.com/js/js_comments.asp
+-->
+
+<head>
+<!-- Meta Header Tags Copied over from previous assignment -->
+	<meta charset="UTF-8">
+    <meta name="description" content="Assignment 12.2: JavaScript - Part 4">
+    <meta name="robots" content="nofollow">
+    <meta name="author" content="Justin Morrow">
+	
+<!-- Link for Google Fonts Copied over from previous assignment -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+<!-- Link for my CSS Style Sheet -->  
+	<link href="Morrow_Mod12_2.css" type="text/css" rel="stylesheet">
+
+<!-- My Page Title Seen on Browser Tab--> 
+	<title>CSD 340 Web Development with HTML and CSS</title>
+</head>
+
+<body>
+    <div id="container">
+        <h1>Assignment 12.2: JavaScript - Part 4</h1>
+        <div class="left-div">
+            <h3>Top 10 Favorite Books</h3>
+
+            <!-- Create two buttons. One button should be labeled "Top to Bottom", the other button should be labeled "Bottom to Top". -->
+            <button onclick="showTopToBottom()">Top to Bottom</button>
+            <button onclick="showBottomToTop()">Bottom to Top</button>
+			<p>Click one of the sort option buttons to display the list of books below</p>
+            <hr>
+
+            <!-- Container for the book list to be added -->
+            <div id="bookList"></div>
+        </div>
+
+
+        <div class="right-div">
+            <h3>5 Things I’ve Learned Since the Course Started</h3>
+			<ul>
+				<li>CSS is fun and powerful</li>
+				<li>Most cool looking pages are probably manipulated by CSS and not the HTML code</li>
+				<li>I've learned about the differences of ol/ul lists having numbers versus bullets </li>
+				<li>I've learned more about wrapping classes for each block so I can have more control via CSS</li>
+				<li>I've started learning about the various HTML/CSS structors but need to learn what the best practices are</li>
+			</ul>
+        </div>
+        <div class="new-div">
+			</div>
+        <div class="footer-div">
+            <a href="../index.html">back to Landing Page</a>
+        </div>
+    </div>
+	
+	
+	<!-- Create a javascript section. Add two functions; , the other to display the array elements in descending order. -->
+    <script>
+        // Take the current list of your top ten books, place the book titles into an array. Reference 1.
+        var favoriteBooks = [
+            "100 Things Every Designer Needs to Know about People",
+            "HTML & CSS design and build websites",
+            "Introduction to Java Programming and Data",
+            "MySQL Explained",
+            "Programming Python",
+            "Learn Python the Hard Way",
+            "The Pragmatic Programmer",
+            "Code Simplicity",
+            "Java for dummies",
+            "Refactoring: Improving the Design of Existing Code"
+        ];
+
+        // Display Top to Bottom: one for displaying the array elements in ascending order.
+        function showTopToBottom() {
+            var output = "<ol>";
+			
+			// Reference 2 for Loops
+            for (var i = 0; i < favoriteBooks.length; i++) {
+                output += "<li>" + favoriteBooks[i] + "</li>";
+            }
+
+            output += "</ol>";
+			
+			// Reference 3 for innerHTML and Reference 4 for document.getElementById
+            document.getElementById("bookList").innerHTML = output;
+        }
+
+        // Display Bottom to Top: the other to display the array elements in descending order. References 5 & 6 for the reverse list and numbering
+		function showBottomToTop() {
+			favoriteBooks.reverse();
+
+			var output = "<ol reversed>";
+			
+			for (var i = 0; i < favoriteBooks.length; i++) {
+				output += "<li>" + favoriteBooks[i] + "</li>";
+			}
+			
+			output += "</ol>";
+			document.getElementById("bookList").innerHTML = output;
+		}
+    </script>
+</body>
+</html>

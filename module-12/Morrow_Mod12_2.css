@@ -1,0 +1,94 @@
+/* CSS Style Sheet for Justin Morrow's CSD-340 Module 3.3 */
+/* CSS Reference: 
+	https://www.w3schools.com/css/
+	https://www.w3schools.com/cssref/pr_list-style-type.php
+	https://www.w3schools.com/css/css_list.asp
+	https://www.w3schools.com/cssref/pr_list-style-position.php
+	https://www.w3schools.com/cssref/pr_margin.php
+*/
+
+
+/* The assignment indicates to add a container class but doesn't outline anything */
+#container {
+}
+
+
+/* The h1 title must be centered on the page */
+h1 {
+  text-align: center;
+}
+
+
+/* Set the weight of the h3 tags to 500 */
+h3 {
+	font-weight: 500;
+}
+
+
+/* Set the weight of the lists to 300. Below is for Ordered Lists
+	the numbers will need to be inside the border, (research list-style and list-style-position)
+*/
+ol {
+	font-weight: 300;
+	list-style-position: inside;
+}
+
+
+/* Set the weight of the lists to 300
+	Change the bullet points to upper-roman (research list-style and list-style-position)
+	Below is for Unordered Lists */
+ul {
+	font-weight: 300;
+	list-style-type: upper-roman;
+	list-style-position: inside;
+}
+
+
+/* The side-by-side divs must have a width of 45%. Apply a 1px solid red border with a 15px border-radius to the ordered list and its' title
+	Give the ordered list a padding of 10px;
+*/
+.left-div {
+	float: left;
+	width: 45%;
+	border: 1px solid red;
+	border-radius: 15px;
+	padding: 10px;	
+}
+
+
+/* The side-by-side divs must have a width of 45%. Apply 1 px dashed red border with a 15px border-radius to the unordered list and its' title
+	Give the unordered list a padding of 10px
+	I didn't see it called out to set a margin, but I noticed the assignment picture showed a gap between boxes and did this to get the gap
+*/
+.right-div {
+	float: left;
+	width: 45%;
+	border: 1px dashed red;
+	border-radius: 15px;
+	padding: 10px;
+	margin-left: 5%;
+}
+
+
+/* Underneath the side-by-side divs add a new div with a width of 100%, Give this div a margin-top of 60% */
+.new-div {
+	width: 100%;
+	margin-top: 60%;
+}
+
+
+/* Give the bottom div a css value of float right and a margin-bottom of 20px
+	I notice if my browser window is snapped to half the screen you can see the Return to Landing easier
+	otherwise you have to scroll down to read it. From google searching it seems like it could be the margin-top 60%
+*/
+.footer-div {
+	float: right;
+	margin-bottom: 20px;
+}
+
+
+/* Add :hover to the links and show the underlines when a cursor hovers over the links */
+
+a:hover {
+	text-decoration: underline;
+}
