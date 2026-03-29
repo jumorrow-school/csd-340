@@ -1,0 +1,483 @@
+/* CSS Style Sheet for Justin Morrow's CSD-340 Module 9.2/10.2 Assignment - Updated on 11/08/25 */
+/* CSS Assignment References: 
+	https://www.w3schools.com/css/
+	https://css-tricks.com/almanac/properties/b/box-shadow/
+	https://www.w3schools.com/css/css_website_layout.asp
+	https://www.w3schools.com/howto/howto_css_fixed_footer.asp
+	https://www.w3schools.com/howto/howto_css_cards.asp
+	https://www.w3schools.com/howto/howto_css_flip_card.asp
+	https://www.w3schools.com/Css/css_rwd_mediaqueries.asp
+	https://www.w3schools.com/cssref/atrule_media.php
+	Note: Classes use (.) and IDs use (#)
+	Seahawks colors: https://teamcolorcodes.com/seattle-seahawks-color-codes/
+	https://jigsaw.w3.org/css-validator/#validate_by_input (Congratulations! No Error Found 11/08/25.)
+	Note: This is a consolidated CSS sheet since I previously had a different CSS sheet for each HTML page
+*/
+
+
+/* Default Body Color, Size, Spacing and Font Settings */
+body {
+	font-family: 'Roboto', sans-serif;
+	background-color: white;
+	color: black;
+	line-height: 1.5;
+}
+
+
+/* The Main Section of the Landing Page Width and Color Settings */
+.main-section {
+	width: 100%;
+	background-color: transparent;
+}
+
+
+/* Float Main Image to Left */
+.main-image {
+	float: left;
+	margin-right: 40px;
+}
+
+
+/* Main Text and Caption Alignment Settings */
+.main-text {
+	overflow: hidden;
+	padding-top: 300px;
+	padding-left: 200px;
+}
+
+
+/* Main H1 Heading Text Style */
+.main-text h1 {
+	font-family: 'Roboto', sans-serif;
+	font-size: 48px;
+	font-weight: bold;
+	margin-bottom: 10px;
+	text-align: left;
+}
+
+
+/* Main H2 Sub-Heading Text Style */
+.main-text h2 {
+	font-family: 'Roboto', sans-serif;
+	font-size: 24px;
+	color: #A5ACAF; /* Wolf Grey */
+	margin-bottom: 10px;
+}
+
+
+/* Main H3 Caption Text Style */
+.main-text h3 {
+	font-family: 'Roboto', sans-serif;
+	font-size: 18px;
+	font-weight: 500;
+	color: #002244; /* College Navy */
+	margin-bottom: 10px;
+}
+
+
+/* Home Page Navigation Bar Settings, Pushing Down 580 Pixels to Place Main Image Above Navbar and Menu Text to the Right */
+.navbar-bottom {
+	position: absolute;
+	top: 580px;
+	left: 0;
+	right: 0;
+	background-color: #002244; /* College Navy */
+	border-top: 5px solid #69BE28; /* Action Green */
+	padding: 12px 24px;
+	text-align: right;
+	font-family: 'Roboto', sans-serif;
+}
+
+/* Navigation for Home Page Menu Bar Link Settings */
+.navbar-bottom a {
+	color: white;
+	text-decoration: none;
+	padding: 0 16px;
+	font-weight: 500;
+}
+
+
+/* Navigation for Home Page Menu Bar Over/Highlight Settings */
+.navbar-bottom a:hover {
+	background-color: #A5ACAF; /* Wolf Grey */
+	text-decoration: underline;
+}
+
+
+/* Stickey Navigation Bar settings for all other pages */
+.navbar-top {
+	position: sticky;
+	top: 0;
+	background-color: #002244; /* College Navy */
+	border-top: 5px solid #69BE28; /* Action Green */
+	padding: 12px 24px;
+	text-align: right;
+	font-family: 'Roboto', sans-serif;
+}
+
+/* Navigation Menu Bar Link Settings */
+.navbar-top a {
+	color: white;
+	text-decoration: none;
+	padding: 0 16px;
+	font-weight: 500;
+}
+
+
+/* Navigation Menu Bar Over/Highlight Settings */
+.navbar-top a:hover {
+	background-color: #A5ACAF; /* Wolf Grey */
+	text-decoration: underline;
+}
+
+
+/* About.html Grid layout for main content container splitting it into 2 equal sized sections */
+#about-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 20px;
+	padding: 20px;
+	margin-top: 20px;
+}
+
+
+/* About.html Left section for the Short Bio and Images box settings */
+.left-bio {
+	background-color: white;
+	padding: 20px;
+	box-sizing: border-box;
+	border: 1px solid #A5ACAF; /* Wolf Grey */
+	box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+
+
+/* About.html Right section for the Interview Questions box settings */
+.right-interview {
+	background-color: white;
+	padding: 20px;
+	box-sizing: border-box;
+	border: 1px solid #A5ACAF; /* Wolf Grey */
+	box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+
+
+/* About.html Placing a 50 pixel gap/space between the Short Bio text and the images */
+.card {
+	margin-bottom: 50px;
+}
+
+
+/* About.html Image gallery grid of 3 equal columns*/
+.left-images {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 15px;
+}
+
+
+/* About.html Set the centering and margins for the image and caption blocks */
+figure {
+	text-align: center;
+	margin: 0;
+}
+
+
+/* About.html Sizing, outline color for the 3 images */
+figure img {
+	width: 100%;
+	max-width: 300px;
+	height: auto;
+	border: 1px solid #A5ACAF; /* Wolf Grey */
+}
+
+
+/* About.html Font, style and sizing info for the text captions below the images */
+figcaption {
+	font-style: italic;
+	font-size: 0.9em;
+	color: grey;
+	margin-top: 5px;
+}
+
+
+/* Hobbies.html Default Container Settings */
+#hobbies-container {
+	margin: 25px auto;
+	padding: 25px;
+	box-sizing: border-box;
+}
+
+
+/* Hobbies.html H1/Main Heading Tech Settings */
+h1 {
+	text-align: center;
+	color: #002244; /* College Navy */
+	margin-bottom: 25px;
+}
+
+
+/* Hobbies.html Card Images Grid of 3 Equal Sized Columns */
+.hobbies-images {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 25px;
+	padding: 40px;
+}
+
+
+/* Hobbies.html Card Styling Settings for the 3 Image Boxes */
+.hobbies-card {
+	background-color: white;
+	border: 1px solid #A5ACAF; /* Wolf Grey */
+	box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+	padding: 25px;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+}
+
+
+/* Hobbies.html Default Card Settings */
+.hobbies-card img {
+	max-width: 100%;
+	height: auto;
+}
+
+
+/* Hobbies.html Default Card Caption Text */
+.hobbies-caption {
+	font-style: italic;
+	font-size: 0.9em;
+	color: #A5ACAF; /* Wolf Grey */
+	margin-top: 20px;
+}
+
+
+/* Hobbies.html Flip Card settings below for 3rd Image to flip between the 2013 and 2025 Seahawks photos
+ * Tutorial for this found watching: https://www.youtube.com/watch?v=NCLdf661ILE and on w3schools reference above.
+*/
+
+.flip-container {
+	perspective: 1000px;
+	width: 100%;
+	height: 250px;
+	position: relative;
+}
+
+
+.flip-container:hover > .card {
+	cursor: pointer;
+	transform: rotateY(180deg);
+}
+
+
+.flip-container .card {
+	width: 100%;
+	transition: transform 1s;
+	transform-style: preserve-3d;
+	display: block;
+}
+
+
+.flip-container .front,
+.flip-container .back {
+	position: absolute;
+	width: 100%;
+	backface-visibility: hidden;
+	border-radius: 0;
+}
+
+
+.flip-container .front img,
+.flip-container .back img {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+
+.flip-container .back {
+	transform: rotateY(180deg);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+}
+
+
+/* Text overlayed on the bottom of both Seahawk images */
+.flip-container .overlay-text {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+	font-size: 1rem;
+	color: white;
+	text-shadow: 0 2px 5px rgba(0,0,0,1);
+}
+
+
+/* Contact.html Default Container Settings */
+#contact-container {
+	text-align: center;
+	padding: 200px;
+}
+
+
+/* Contact.html Email Button Seahawks Colors*/
+.email-button {
+	display: inline-block;
+	background-color: #002244; /* College Navy */
+	color: white;
+	border: 2px solid #69BE28; /* Action Green */
+	padding: 20px 40px;
+	text-decoration: none;
+	font-weight: 600;
+}
+
+
+/* Contact.html Email Button Hover Settings */
+.email-button:hover {
+	background-color: #69BE28; /* Action Green */
+}
+
+
+/* Footer for all pages excluding index.html */ 
+footer {
+	border-top: 5px solid #69BE28; /* Action Green */
+	background-color: #002244; /* College Navy */
+	color: white;
+	text-align: center;
+	height: 40px;
+}
+
+
+/* Footer link Setting to highlight the Click Here link to Seahawks Action Green and Underlined */
+.footer-link {
+	color: #69BE28; /* Action Green */
+	text-decoration: underline;
+}
+
+
+/* New Mobile Friendly Section added from Peer Review Comment by Jazzmon:
+ * Add adjustments to ensure the site displays properly on smaller screens, especially below 600px, with layouts stacking rather than side-by-side.
+ * References W3Schools - Responsive Web Design Media Queries and CSS @media Rule
+ * https://www.w3schools.com/Css/css_rwd_mediaqueries.asp
+ * https://www.w3schools.com/cssref/atrule_media.php
+ * https://www.geeksforgeeks.org/css/css-rules-in-web-design-for-mobile-screens/
+ * Tested the below settings using Google Chrome Browser Developer Options (F12) and selecting the iPhone 14 Pro Max since that's the phone I use.
+ * I thought this would be a quick setting. This took hours to tweak for looking good, it's not perfect (As seen over 530px), but looks much better for Mobile devices than it was previously.
+*/
+@media screen and (max-width: 600px) {
+
+	/* Default Body: Adjusted Padding */
+	body {
+		padding: 0 10px;
+  }
+
+
+	/* The Main Section: Removed the float, centered the text and lowered the top padding */
+	.main-section {
+		float: none;
+		text-align: center;
+		padding-top: 0;
+	}
+
+
+	/* Main Image: Removed the float, set the display to block for centering as well as the margin/width/height settings */
+	.main-image {
+		float: none;
+		display: block;
+		margin: 0 auto 20px auto;
+		width: 100%;
+		height: auto;
+	}
+
+	
+	/* Main Text: Removed the float, aligned text for centering and adjusted padding */
+	.main-text {
+		float: none;
+		text-align: center;
+		padding-top: 20px;
+		padding-left: 0;
+	}
+
+
+	/* Main H1: Reduced by 50% */
+	.main-text h1 {
+		font-size: 24px;
+	}
+
+
+	/* Main H2: Reduced by 50% */
+	.main-text h2 {
+		font-size: 12px;
+		
+	}
+
+
+	/* Home Page Navigation Bar: Centered the text */
+	.navbar-bottom {
+		text-align: center;
+	}
+
+	
+	/* Home Page Navivation Bar: Set the item links to blocks for easier tapping and set the vertical padding */
+	.navbar-bottom a {
+		display: block;
+		padding: 10px 0;
+	}
+
+
+	/* Other Pages Sticky Navigation Top Bar: Centered the text */
+	.navbar-top {
+		text-align: center;
+	}
+
+
+	/* Other Pages Sticky Navigation Top Bar: Set the item links to blocks for easier tapping and set the vertical padding */
+	.navbar-top a {
+		display: block;
+		padding: 10px 0;
+	}
+
+
+	/* About.html Container: Stacked the columns for scrolling vertically */
+	#about-container {
+		display: block;
+	}
+
+
+	/* About.html Left Images: Changed from 3 column (1fr 1fr 1fr) to 1 column (1fr) Grid for scrolling vertically */
+	.left-images {
+		grid-template-columns: 1fr;
+	}
+
+
+	/* Hobbies.html Images: Changed from 3 column (1fr 1fr 1fr) to 1 column (1fr) Grid for scrolling vertically */
+	.hobbies-images {
+		grid-template-columns: 1fr;
+	}
+
+
+	/* Contact.html Container: Reduced the padding from 200px to 75px */
+	#contact-container {
+		padding: 75px;
+	}
+
+
+	/* Contact.html Email Button: Reduced the width to 50% */
+	.email-button {
+		width: 50%;
+	}
+
+
+	/* Footer: Adjusted the height, padding and font size to display better */
+	footer {
+		height: auto;
+		padding: 10px;
+		font-size: 12px;
+	}
+}
